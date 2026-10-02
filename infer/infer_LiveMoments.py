@@ -1,11 +1,9 @@
 import os
 os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:8"
 import sys
-import yaml
-with open("config/inference_config.yml") as f:
-    infer_cfg = yaml.safe_load(f)
-
 sys.path.append('.')
+from live_utils.config import load_inference_config
+infer_cfg = load_inference_config()
 sys.path.append(os.path.join(infer_cfg["raft_path"], "core"))
 from accelerate.utils import set_seed
 set_seed(42, deterministic=True)
@@ -17,7 +15,7 @@ from diffusers import (
 )
 from models.transformer_sd3_fusem import SD3TransformerFuseMotion2DModel
 from diffusers.image_processor import  VaeImageProcessor
-from diffusers.pipelines.stable_diffusion_3.pipeline_stable_diffusion_3_img2img import retrieve_timesteps
+from diffusers.pipelines.stable_diffusion_3.pipeline_stable_diffusion_3_img2img import retrieve_timesteps, calculate_shift
 import torch
 from torchvision import transforms
 import torch.nn.functional as F
@@ -284,6 +282,9 @@ def main(args, index):
 
 if __name__ == "__main__":
     args = parse_args()
+    if args.device.startswith("cuda"):
+        from live_utils.cuda_env import preload_wheel_cudnn
+        preload_wheel_cudnn()
     weight_type = torch.float16
     trained_model_path = infer_cfg["pretrained_weight_path"]
     pretrained_raft_model_path = infer_cfg["raft_weight_path"]

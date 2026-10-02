@@ -3,3 +3,19 @@ results/
 dataset/
 __pycache__/
 test_metrics/
+# Generated local state; never commit credentials, user inputs, or checkpoints.
+.venv/
+checkpoints/
+local-data/
+local-outputs/
+third_party/
+setup-evidence/
+.runtime/
+.cache/
+.env
+.env.*
+config/local_inference.yml
+config/*local*.yml
+*.pt
+*.pth
+*.safetensors

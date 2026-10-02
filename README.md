@@ -129,3 +129,7 @@ python infer/infer_LiveMoments.py \
   url={https://openreview.net/forum?id=02mgFnnfqG}
 }
 ```
+
+## Optional pinned uv inference
+
+See [portable uv setup and offline inference](docs/uv-inference.md) for workspace-backed environments, pinned model downloads, CPU-derived prompt embeddings, validated input triplets, GPU admission guards, and CPU tests.

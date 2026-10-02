@@ -1,6 +1,5 @@
-import yaml
-with open("config/inference_config.yml") as f:
-    infer_cfg = yaml.safe_load(f)
+from live_utils.config import load_inference_config
+infer_cfg = load_inference_config()
 
 import sys
 sys.path.append(infer_cfg["raft_path"])

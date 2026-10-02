@@ -1,0 +1,15 @@
+# Paths may use these variables or be relative to this YAML file.
+# Override LIVEMOMENTS_RUNTIME_DIR to relocate all models and generated assets.
+SD3_weight_path: ${LIVEMOMENTS_RUNTIME_DIR}/models/sd3
+pretrained_weight_path: ${LIVEMOMENTS_RUNTIME_DIR}/models/livemoments
+motion_encoder_weight_path: ${LIVEMOMENTS_RUNTIME_DIR}/models/livemoments/motion_encoder.pt
+prompt_embeds_path: ${LIVEMOMENTS_RUNTIME_DIR}/models/prompt_embeds.pt
+pooled_prompt_embeds_path: ${LIVEMOMENTS_RUNTIME_DIR}/models/pooled_prompt_embeds.pt
+raft_path: ${LIVEMOMENTS_RUNTIME_DIR}/src/RAFT
+raft_weight_path: ${LIVEMOMENTS_RUNTIME_DIR}/models/raft/raft-sintel.pth
+# Populate matching filenames; HQ reference and its LR counterpart must correspond.
+lr_path: ${LIVEMOMENTS_RUNTIME_DIR}/data/lr
+ref_path: ${LIVEMOMENTS_RUNTIME_DIR}/data/ref
+ref_lr_path: ${LIVEMOMENTS_RUNTIME_DIR}/data/ref_lr
+lr_res: 768.0
+ref_res: 768.0

@@ -1,0 +1,41 @@
+{
+  "test": "synthetic 768x768 triplets, six-step GPU smoke; no user media",
+  "input_size": [
+    768,
+    768
+  ],
+  "output_size": [
+    768,
+    768
+  ],
+  "steps": 6,
+  "seed": 42,
+  "precision": "float16",
+  "prompt": "locally derived genuine SD3 empty prompt",
+  "gpu_snapshot_after_run": "NVIDIA GeForce RTX 5090, 595.84, 32607 MiB",
+  "started_at": "2026-10-02T17:35:06.943107+09:00",
+  "finished_at": "2026-10-02T17:35:27.960034+09:00",
+  "wall_seconds": 21.017,
+  "sampled_process_peak_mib": 13404,
+  "sampling_interval_seconds": 0.2,
+  "memory_method": "nvidia-smi own child processes, not torch allocator peak",
+  "versions": {
+    "python": "3.11.16",
+    "torch": "2.14.0+cu130",
+    "torchvision": "0.29.0+cu130",
+    "cuda_wheel": "13.0"
+  },
+  "library_versions": {
+    "diffusers": "0.32.2",
+    "transformers": "4.42.4",
+    "peft": "0.10.0",
+    "accelerate": "1.12.0",
+    "numpy": "1.24.4",
+    "opencv-python-headless": "4.9.0.80"
+  },
+  "cpu_preflight_passed": true,
+  "cpu_tests_passed": 8,
+  "input_fixture_reproduction_pixels_equal": true,
+  "output_sha256": "f4049dff32f77b31e0af9d4f0d621730d4564702b59fe28fe5534bbbeae255b9",
+  "quality_acceptance_claimed": false
+}
